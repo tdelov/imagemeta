@@ -57,8 +57,8 @@ type Exif struct {
 	Aperture         meta.Aperture
 	FocalLength      meta.FocalLength
 	SubjectDistance  float32
-	GPSLatitude      float64
-	GPSLongitude     float64
+	GPSLatitude      string
+	GPSLongitude     string
 	GPSAltitude      float32
 	GPSTimestamp     time.Time
 }
