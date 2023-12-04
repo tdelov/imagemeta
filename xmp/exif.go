@@ -97,9 +97,9 @@ func (exif *Exif) parse(p property) (err error) {
 	case xmpns.ISOSpeedRatings:
 		exif.ISOSpeedRatings = parseUint32(p.val)
 	case xmpns.GPSLatitude:
-		exif.GPSLatitude = p.Value()
+		exif.GPSLatitude = parseString(p.Value())
 	case xmpns.GPSLongitude:
-		exif.GPSLongitude = p.Value()
+		exif.GPSLongitude = parseString(p.Value())
 	case xmpns.GPSAltitude:
 		exif.GPSAltitude = float32(parseFloat64(p.Value()))
 	//case xmpns.Flash:
