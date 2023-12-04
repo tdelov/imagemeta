@@ -8,14 +8,14 @@ import (
 	"io"
 	"sync"
 
-	"github.com/evanoberholster/imagemeta/exif2"
-	"github.com/evanoberholster/imagemeta/imagetype"
-	"github.com/evanoberholster/imagemeta/isobmff"
-	"github.com/evanoberholster/imagemeta/jpeg"
-	"github.com/evanoberholster/imagemeta/meta"
-	"github.com/evanoberholster/imagemeta/png"
-	"github.com/evanoberholster/imagemeta/preview"
-	"github.com/evanoberholster/imagemeta/tiff"
+	"github.com/tdelov/imagemeta/exif2"
+	"github.com/tdelov/imagemeta/imagetype"
+	"github.com/tdelov/imagemeta/isobmff"
+	"github.com/tdelov/imagemeta/jpeg"
+	"github.com/tdelov/imagemeta/meta"
+	"github.com/tdelov/imagemeta/png"
+	"github.com/tdelov/imagemeta/preview"
+	"github.com/tdelov/imagemeta/tiff"
 	"github.com/pkg/errors"
 )
 
