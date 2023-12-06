@@ -60,7 +60,7 @@ type Exif struct {
 	GPSLatitude      string
 	GPSLongitude     string
 	GPSAltitude      float32
-	GPSTimestamp     time.Time
+	GPSTimeStamp     time.Time
 }
 
 func (exif *Exif) parse(p property) (err error) {
@@ -104,8 +104,8 @@ func (exif *Exif) parse(p property) (err error) {
 		exif.GPSLongitude = parseString(p.Value())
 	case xmpns.GPSAltitude:
 		exif.GPSAltitude = float32(parseFloat64(p.Value()))
-	case xmpns.GPSTimestamp:
-		exif.GPSTimestamp , err = parseDate( string( p.Value() ) )	
+	case xmpns.GPSTimeStamp:
+		exif.GPSTimeStamp , err = parseDate( string( p.Value() ) )	
 	//case xmpns.Flash:
 	default:
 		return ErrPropertyNotSet
