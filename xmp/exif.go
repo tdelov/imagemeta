@@ -104,6 +104,8 @@ func (exif *Exif) parse(p property) (err error) {
 		exif.GPSLongitude = parseString(p.Value())
 	case xmpns.GPSAltitude:
 		exif.GPSAltitude = float32(parseFloat64(p.Value()))
+	case xmpns.GPSTimestamp:
+		exif.GPSTimestamp =  parseDate( string( p.Value() ) )	
 	//case xmpns.Flash:
 	default:
 		return ErrPropertyNotSet
