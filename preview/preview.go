@@ -3,7 +3,7 @@ package preview
 import (
 	"io"
 
-	"github.com/evanoberholster/imagemeta/meta"
+	"github.com/tdelov/imagemeta/meta"
 	"github.com/rs/zerolog"
 )
 

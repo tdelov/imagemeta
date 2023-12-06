@@ -1,6 +1,6 @@
 package sony
 
-import "github.com/evanoberholster/imagemeta/exif2/tag"
+import "github.com/tdelov/imagemeta/exif2/tag"
 
 // TagSonyIDMap is a Map of tag.ID to string for the SonyMakerNote tags
 var TagSonyIDMap = map[tag.ID]string{}

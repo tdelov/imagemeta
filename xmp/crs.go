@@ -1,7 +1,7 @@
 package xmp
 
 import (
-	"github.com/evanoberholster/imagemeta/xmp/xmpns"
+	"github.com/tdelov/imagemeta/xmp/xmpns"
 )
 
 // Double represents 2 uint16 values

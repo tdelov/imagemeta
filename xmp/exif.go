@@ -3,8 +3,8 @@ package xmp
 import (
 	"time"
 
-	"github.com/evanoberholster/imagemeta/meta"
-	"github.com/evanoberholster/imagemeta/xmp/xmpns"
+	"github.com/tdelov/imagemeta/meta"
+	"github.com/tdelov/imagemeta/xmp/xmpns"
 )
 
 // Flash represents exif:Flash
@@ -70,7 +70,7 @@ func (exif *Exif) parse(p property) (err error) {
 	case xmpns.PixelYDimension:
 		exif.PixelYDimension = parseUint32(p.Value())
 	case xmpns.DateTimeOriginal:
-		exif.DateTimeOriginal, err = parseDate(p.Value())
+		exif.DateTimeOriginal, err = parseDate( string( p.Value() ) )
 	case xmpns.ExposureTime:
 		n, d := parseRational(p.Value())
 		exif.ExposureTime = meta.ExposureTime(float32(n) / float32(d))

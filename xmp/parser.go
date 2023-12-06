@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/evanoberholster/imagemeta/meta"
-	"github.com/evanoberholster/imagemeta/xmp/xmpns"
+	"github.com/tdelov/imagemeta/meta"
+	"github.com/tdelov/imagemeta/xmp/xmpns"
 )
 
 func (xmp *XMP) parser(p property) (err error) {
@@ -44,15 +44,61 @@ func (xmp *XMP) parser(p property) (err error) {
 }
 
 // parseDate parses a Date and returns a time.Time or an error
-func parseDate(buf []byte) (t time.Time, err error) {
-	str := string(buf)
-	if t, err = time.Parse("2006-01-02T15:04:05Z07:00", str); err != nil {
-		if t, err = time.Parse("2006-01-02T15:04:05.00", str); err != nil {
-			return time.Parse("2006-01-02T15:04:05", str)
+//func parseDate(buf []byte) (t time.Time, err error) {
+//	str := string(buf)
+//	if t, err = time.Parse("2006-01-02T15:04:05Z07:00", str); err != nil {
+//		if t, err = time.Parse("2006-01-02T15:04:05.00", str); err != nil {
+//			return time.Parse("2006-01-02T15:04:05", str)
+//		}
+//	}
+//	return
+//}
+
+// This function returns a EXIF date time compliant date.
+// Another function may be needed to return XPM compliant dates
+func parseDate(buf string) (t time.Time, err error) {
+
+	// "2021-01-10T17:30:57.00"
+        // Not sure if this time format is part of the specs. more common for IPTC or XMP format to have the dashes
+        // XMP format could have the time zone
+        // https://developer.adobe.com/xmp/docs/XMPNamespaces/XMPDataTypes/#date
+        // https://iptc.org/std/photometadata/documentation/mappingguidelines/#exif-note-on-date-created
+	if buf[4] == '-' && buf[7] == '-' &&	buf[13] == ':' && buf[16] == ':' {
+	 	if buf[10] == ' ' || buf[10] == 'T' { 
+			year, err := strconv.Atoi( buf[0:4]   )
+			month,err := strconv.Atoi( buf[5:7]   )
+			day,  err := strconv.Atoi( buf[8:10]  )
+			hour, err := strconv.Atoi( buf[11:13] )
+			min,  err := strconv.Atoi( buf[14:16] )
+			sec,  err := strconv.Atoi( buf[17:19] )
+			// mil, err := strconv.Atoi(  buf[20:] )
+
+			//fmt.Println( year ,"|", month, "|", day, "|", hour, "|", min, "|", sec ,"|" , 0 )
+			return time.Date(int(year), time.Month(month), int(day), int(hour), int(min), int(sec), 0 , time.UTC) , err
 		}
 	}
-	return
+
+	// EXIF Date format YYYY:MM:DD HH:mm:SS
+	// https://exiv2.org/manpage.html#date_time_fmts
+	// buf[10] should be a space according to the specs, but they also say in the Makernote, the format could be different per manufacturers.
+	// Exif date-time values have no time zone information.
+	if buf[4] == ':' && buf[7] == ':' && buf[10] == ' ' &&	buf[13] == ':' && buf[16] == ':' {
+		 if buf[10] == ' ' || buf[10] == 'T' { 
+			year, err := strconv.Atoi( buf[0:4]   )
+			month,err := strconv.Atoi( buf[5:7]   )
+			day,  err := strconv.Atoi( buf[8:10]  )
+			hour, err := strconv.Atoi( buf[11:13] )
+			min,  err := strconv.Atoi( buf[14:16] )
+			sec,  err := strconv.Atoi( buf[17:19] )
+			// mil, err := strconv.Atoi(  buf[20:] )
+
+			//fmt.Println( year ,"|", month, "|", day, "|", hour, "|", min, "|", sec, "|" , 0 )
+			return time.Date(int(year), time.Month(month), int(day), int(hour), int(min), int(sec), 0 , time.UTC) , err
+		}
+	}
+	return  
 }
+// --------------------------------------------------------------------- //
 
 // parseUUID parses a UUID and returns a meta.UUID
 func parseUUID(buf []byte) (uuid meta.UUID) {

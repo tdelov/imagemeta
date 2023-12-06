@@ -3,7 +3,7 @@ package isobmff
 import (
 	"io"
 
-	"github.com/evanoberholster/imagemeta/meta"
+	"github.com/tdelov/imagemeta/meta"
 )
 
 type ExifReader func(r io.Reader, h meta.ExifHeader) error

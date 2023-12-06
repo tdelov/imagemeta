@@ -3,10 +3,10 @@ package exif2
 import (
 	"fmt"
 
-	"github.com/evanoberholster/imagemeta/exif2/ifds"
-	"github.com/evanoberholster/imagemeta/exif2/ifds/exififd"
-	"github.com/evanoberholster/imagemeta/exif2/tag"
-	"github.com/evanoberholster/imagemeta/meta/utils"
+	"github.com/tdelov/imagemeta/exif2/ifds"
+	"github.com/tdelov/imagemeta/exif2/ifds/exififd"
+	"github.com/tdelov/imagemeta/exif2/tag"
+	"github.com/tdelov/imagemeta/meta/utils"
 	"github.com/rs/zerolog"
 )
 

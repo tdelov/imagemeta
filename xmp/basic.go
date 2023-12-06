@@ -3,22 +3,22 @@ package xmp
 import (
 	"time"
 
-	"github.com/evanoberholster/imagemeta/meta"
-	"github.com/evanoberholster/imagemeta/xmp/xmpns"
+	"github.com/tdelov/imagemeta/meta"
+	"github.com/tdelov/imagemeta/xmp/xmpns"
 )
 
 func (basic *Basic) parse(p property) (err error) {
 	switch p.Property().Name() {
 	case xmpns.CreateDate:
-		basic.CreateDate, err = parseDate(p.Value())
+		basic.CreateDate, err = parseDate( string( p.Value() ) ) 
 	case xmpns.CreatorTool:
 		basic.CreatorTool = parseString(p.Value())
 	case xmpns.Label:
 		basic.Label = parseString(p.Value())
 	case xmpns.MetadataDate:
-		basic.MetadataDate, err = parseDate(p.Value())
+		basic.MetadataDate, err = parseDate(string( p.Value() ) )
 	case xmpns.ModifyDate:
-		basic.ModifyDate, err = parseDate(p.Value())
+		basic.ModifyDate, err = parseDate(string( p.Value() ) )
 	case xmpns.Rating:
 		basic.Rating = int8(parseInt(p.Value()))
 	default:

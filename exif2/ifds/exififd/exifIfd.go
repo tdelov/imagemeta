@@ -1,7 +1,7 @@
 // Package exififd provides types for "RootIfd/ExifIfd"
 package exififd
 
-import "github.com/evanoberholster/imagemeta/exif2/tag"
+import "github.com/tdelov/imagemeta/exif2/tag"
 
 func TagString(id tag.ID) string {
 	name, ok := TagIDMap[id]

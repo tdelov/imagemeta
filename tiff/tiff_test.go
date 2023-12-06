@@ -6,9 +6,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/evanoberholster/imagemeta/imagetype"
-	"github.com/evanoberholster/imagemeta/meta"
-	"github.com/evanoberholster/imagemeta/meta/utils"
+	"github.com/tdelov/imagemeta/imagetype"
+	"github.com/tdelov/imagemeta/meta"
+	"github.com/tdelov/imagemeta/meta/utils"
 )
 
 // Tests

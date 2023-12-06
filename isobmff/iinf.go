@@ -1,7 +1,7 @@
 package isobmff
 
 import (
-	"github.com/evanoberholster/imagemeta/imagetype"
+	"github.com/tdelov/imagemeta/imagetype"
 	"github.com/pkg/errors"
 )
 

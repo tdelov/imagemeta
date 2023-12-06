@@ -5,10 +5,10 @@ import (
 	"bufio"
 	"io"
 
-	"github.com/evanoberholster/imagemeta/exif2/ifds"
-	"github.com/evanoberholster/imagemeta/imagetype"
-	"github.com/evanoberholster/imagemeta/meta"
-	"github.com/evanoberholster/imagemeta/meta/utils"
+	"github.com/tdelov/imagemeta/exif2/ifds"
+	"github.com/tdelov/imagemeta/imagetype"
+	"github.com/tdelov/imagemeta/meta"
+	"github.com/tdelov/imagemeta/meta/utils"
 )
 
 const (

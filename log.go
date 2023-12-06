@@ -4,9 +4,9 @@ import (
 	"io"
 	"os"
 
-	"github.com/evanoberholster/imagemeta/exif2"
-	"github.com/evanoberholster/imagemeta/isobmff"
-	"github.com/evanoberholster/imagemeta/jpeg"
+	"github.com/tdelov/imagemeta/exif2"
+	"github.com/tdelov/imagemeta/isobmff"
+	"github.com/tdelov/imagemeta/jpeg"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 )

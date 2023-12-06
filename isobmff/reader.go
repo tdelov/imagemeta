@@ -6,7 +6,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/evanoberholster/imagemeta/meta"
+	"github.com/tdelov/imagemeta/meta"
 	"github.com/pkg/errors"
 )
 

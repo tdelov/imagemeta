@@ -1,8 +1,8 @@
 package xmp
 
 import (
-	"github.com/evanoberholster/imagemeta/meta"
-	"github.com/evanoberholster/imagemeta/xmp/xmpns"
+	"github.com/tdelov/imagemeta/meta"
+	"github.com/tdelov/imagemeta/xmp/xmpns"
 )
 
 // Tiff attributes of an XMP Packet.

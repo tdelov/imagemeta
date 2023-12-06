@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/evanoberholster/imagemeta/imagetype"
+	"github.com/tdelov/imagemeta/imagetype"
 )
 
 var (

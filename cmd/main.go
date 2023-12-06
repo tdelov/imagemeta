@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/evanoberholster/imagemeta"
-	"github.com/evanoberholster/imagemeta/exif2"
+	"github.com/tdelov/imagemeta"
+	"github.com/tdelov/imagemeta/exif2"
 	"github.com/rs/zerolog"
 )
 

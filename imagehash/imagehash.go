@@ -13,7 +13,7 @@ import (
 	"image"
 	"sync"
 
-	"github.com/evanoberholster/imagemeta/imagehash/transforms"
+	"github.com/tdelov/imagemeta/imagehash/transforms"
 )
 
 //go:generate msgp

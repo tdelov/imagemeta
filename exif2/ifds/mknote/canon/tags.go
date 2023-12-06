@@ -1,7 +1,7 @@
 package canon
 
 import (
-	"github.com/evanoberholster/imagemeta/exif2/tag"
+	"github.com/tdelov/imagemeta/exif2/tag"
 )
 
 // TagCanonString returns the string representation of a tag.ID for Canon Makernotes

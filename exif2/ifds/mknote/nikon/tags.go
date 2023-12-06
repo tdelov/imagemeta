@@ -1,6 +1,6 @@
 package nikon
 
-import "github.com/evanoberholster/imagemeta/exif2/tag"
+import "github.com/tdelov/imagemeta/exif2/tag"
 
 // TagNikonString returns the string representation of a tag.ID for Nikon Makernotes
 func TagNikonString(id tag.ID) string {

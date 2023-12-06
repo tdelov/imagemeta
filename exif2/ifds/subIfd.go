@@ -1,7 +1,7 @@
 package ifds
 
 import (
-	"github.com/evanoberholster/imagemeta/exif2/tag"
+	"github.com/tdelov/imagemeta/exif2/tag"
 )
 
 // TagSubIfdString returns the string representation of a tag.ID when found on a SubIfd

@@ -5,9 +5,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/evanoberholster/imagemeta/exif2/ifds"
-	"github.com/evanoberholster/imagemeta/imagetype"
-	"github.com/evanoberholster/imagemeta/meta"
+	"github.com/tdelov/imagemeta/exif2/ifds"
+	"github.com/tdelov/imagemeta/imagetype"
+	"github.com/tdelov/imagemeta/meta"
 )
 
 // Exif data structure

@@ -1,6 +1,6 @@
 package apple
 
-import "github.com/evanoberholster/imagemeta/exif2/tag"
+import "github.com/tdelov/imagemeta/exif2/tag"
 
 // TagAppleString returns the string representation of a tag.ID for Apple Makernotes
 func TagAppleString(id tag.ID) string {

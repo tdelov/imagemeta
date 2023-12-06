@@ -4,14 +4,14 @@ package ifds
 import (
 	"fmt"
 
-	"github.com/evanoberholster/imagemeta/exif2/ifds/exififd"
-	"github.com/evanoberholster/imagemeta/exif2/ifds/gpsifd"
-	"github.com/evanoberholster/imagemeta/exif2/ifds/mknote/apple"
-	"github.com/evanoberholster/imagemeta/exif2/ifds/mknote/canon"
-	"github.com/evanoberholster/imagemeta/exif2/ifds/mknote/nikon"
-	"github.com/evanoberholster/imagemeta/exif2/ifds/mknote/sony"
-	"github.com/evanoberholster/imagemeta/exif2/tag"
-	"github.com/evanoberholster/imagemeta/meta/utils"
+	"github.com/tdelov/imagemeta/exif2/ifds/exififd"
+	"github.com/tdelov/imagemeta/exif2/ifds/gpsifd"
+	"github.com/tdelov/imagemeta/exif2/ifds/mknote/apple"
+	"github.com/tdelov/imagemeta/exif2/ifds/mknote/canon"
+	"github.com/tdelov/imagemeta/exif2/ifds/mknote/nikon"
+	"github.com/tdelov/imagemeta/exif2/ifds/mknote/sony"
+	"github.com/tdelov/imagemeta/exif2/tag"
+	"github.com/tdelov/imagemeta/meta/utils"
 	"github.com/rs/zerolog"
 )
 

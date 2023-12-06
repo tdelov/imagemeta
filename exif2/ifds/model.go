@@ -1,10 +1,10 @@
 package ifds
 
 import (
-	"github.com/evanoberholster/imagemeta/exif2/ifds/mknote/apple"
-	"github.com/evanoberholster/imagemeta/exif2/ifds/mknote/canon"
-	"github.com/evanoberholster/imagemeta/exif2/ifds/mknote/nikon"
-	"github.com/evanoberholster/imagemeta/exif2/ifds/mknote/sony"
+	"github.com/tdelov/imagemeta/exif2/ifds/mknote/apple"
+	"github.com/tdelov/imagemeta/exif2/ifds/mknote/canon"
+	"github.com/tdelov/imagemeta/exif2/ifds/mknote/nikon"
+	"github.com/tdelov/imagemeta/exif2/ifds/mknote/sony"
 )
 
 // CameraModel is a Camera Model found in Exif

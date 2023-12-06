@@ -1,7 +1,7 @@
 package isobmff
 
 import (
-	"github.com/evanoberholster/imagemeta/meta"
+	"github.com/tdelov/imagemeta/meta"
 	"github.com/pkg/errors"
 	"github.com/rs/zerolog"
 )
