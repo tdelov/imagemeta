@@ -63,7 +63,7 @@ func parseDate(buf string) (t time.Time, err error) {
         // XMP format could have the time zone
         // https://developer.adobe.com/xmp/docs/XMPNamespaces/XMPDataTypes/#date
         // https://iptc.org/std/photometadata/documentation/mappingguidelines/#exif-note-on-date-created
-	if buf[4] == '-' && buf[7] == '-' &&	buf[13] == ':' && buf[16] == ':' {
+	if buf[4] == '-' && buf[7] == '-' &&  buf[13] == ':' && buf[16] == ':' {
 	 	if buf[10] == ' ' || buf[10] == 'T' { 
 			year, err := strconv.Atoi( buf[0:4]   )
 			month,err := strconv.Atoi( buf[5:7]   )
@@ -82,7 +82,7 @@ func parseDate(buf string) (t time.Time, err error) {
 	// https://exiv2.org/manpage.html#date_time_fmts
 	// buf[10] should be a space according to the specs, but they also say in the Makernote, the format could be different per manufacturers.
 	// Exif date-time values have no time zone information.
-	if buf[4] == ':' && buf[7] == ':' && buf[10] == ' ' &&	buf[13] == ':' && buf[16] == ':' {
+	if buf[4] == ':' && buf[7] == ':' && buf[13] == ':' && buf[16] == ':' {
 		 if buf[10] == ' ' || buf[10] == 'T' { 
 			year, err := strconv.Atoi( buf[0:4]   )
 			month,err := strconv.Atoi( buf[5:7]   )
@@ -92,7 +92,7 @@ func parseDate(buf string) (t time.Time, err error) {
 			sec,  err := strconv.Atoi( buf[17:19] )
 			// mil, err := strconv.Atoi(  buf[20:] )
 
-			//fmt.Println( year ,"|", month, "|", day, "|", hour, "|", min, "|", sec, "|" , 0 )
+			fmt.Println(  "|year:", year ,"|", "month:", month, "|", "day:", day, "|", "hour:", hour, "|", "min:", min, "|","sec:", sec, "|" , 0 )
 			return time.Date(int(year), time.Month(month), int(day), int(hour), int(min), int(sec), 0 , time.UTC) , err
 		}
 	}

@@ -71,6 +71,8 @@ func (exif *Exif) parse(p property) (err error) {
 		exif.PixelYDimension = parseUint32(p.Value())
 	case xmpns.DateTimeOriginal:
 		exif.DateTimeOriginal, err = parseDate( string( p.Value() ) )
+	case xmpns.CreateDate:
+		exif.CreateDate, err = parseDate( string( p.Value() ) )
 	case xmpns.ExposureTime:
 		n, d := parseRational(p.Value())
 		exif.ExposureTime = meta.ExposureTime(float32(n) / float32(d))
