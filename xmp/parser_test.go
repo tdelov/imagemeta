@@ -36,3 +36,13 @@ func TestExifDateString2(t *testing.T) {
      	t.Log("Sent 2007:09:11T13:53:33.006. Got:" , msg )
    	return
 }
+
+func TestExifDateStringEmpty(t *testing.T) {
+    msg, err := parseDate("")
+    if err != nil {
+	t.Fatalf(`parseDate("") = %q, %v, want "", error`, msg, err)
+    }  
+	t.Log("Sent  Got:" , msg )
+	return
+}
+

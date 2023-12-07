@@ -58,11 +58,17 @@ func (xmp *XMP) parser(p property) (err error) {
 // Another function may be needed to return XPM compliant dates
 func parseDate(buf string) (t time.Time, err error) {
 
+	// I'm not sure this would get used except for testing.
+	if buf == "" { 
+	   // fmt.Println("EMPTY BUF STRING")
+	   return
+	}  
+
 	// "2021-01-10T17:30:57.00"
-        // Not sure if this time format is part of the specs. more common for IPTC or XMP format to have the dashes
-        // XMP format could have the time zone
-        // https://developer.adobe.com/xmp/docs/XMPNamespaces/XMPDataTypes/#date
-        // https://iptc.org/std/photometadata/documentation/mappingguidelines/#exif-note-on-date-created
+	// Not sure if this time format is part of the specs. more common for IPTC or XMP format to have the dashes
+	// XMP format could have the time zone
+	// https://developer.adobe.com/xmp/docs/XMPNamespaces/XMPDataTypes/#date
+	// https://iptc.org/std/photometadata/documentation/mappingguidelines/#exif-note-on-date-created
 	if buf[4] == '-' && buf[7] == '-' &&  buf[13] == ':' && buf[16] == ':' {
 	 	if buf[10] == ' ' || buf[10] == 'T' { 
 			year, err := strconv.Atoi( buf[0:4]   )
@@ -96,6 +102,7 @@ func parseDate(buf string) (t time.Time, err error) {
 			return time.Date(int(year), time.Month(month), int(day), int(hour), int(min), int(sec), 0 , time.UTC) , err
 		}
 	}
+
 	return  
 }
 // --------------------------------------------------------------------- //
